@@ -48,6 +48,18 @@ bzl_library(
     ],
 )
 
+
+bzl_library(
+    name = "bundle_package_type",
+    srcs = ["bundle_package_type.bzl"],
+    visibility = [
+        "//apple:__subpackages__",
+    ],
+    deps = [
+        ":rule_support",
+    ],
+)
+
 bzl_library(
     name = "bundling_support",
     srcs = ["bundling_support.bzl"],
@@ -382,6 +394,7 @@ bzl_library(
     ],
     deps = [
         ":apple_product_type",
+        ":bundle_package_type",
         ":transition_support",
     ],
 )
